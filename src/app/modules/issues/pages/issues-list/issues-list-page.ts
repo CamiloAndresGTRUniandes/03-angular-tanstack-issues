@@ -5,4 +5,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './issues-list-page.html',
 })
-export class IssuesListPage { }
+export default class IssuesListPage { }
