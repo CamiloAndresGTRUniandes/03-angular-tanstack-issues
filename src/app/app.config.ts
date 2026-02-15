@@ -2,13 +2,13 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessC
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http'
 import {
-  provideAngularQuery,
   provideQueryClient,
   provideTanStackQuery,
   QueryClient,
 } from '@tanstack/angular-query-experimental';
 import { withDevtools } from '@tanstack/angular-query-experimental/devtools';
 import { routes } from './app.routes';
+import { provideMarkdown } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideZonelessChangeDetection(),
     provideHttpClient(),
-    provideTanStackQuery(new QueryClient(), withDevtools())
+    provideTanStackQuery(new QueryClient(), withDevtools()),
+    provideMarkdown(),
   ]
 };
